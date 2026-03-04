@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>3 meses, Elisa · Lo que no te he dicho</title>
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fef7f9;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #2c1819;
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem 1rem;
+        }
+
+        /* papel con textura suave - más ligero */
+        .carta {
+            max-width: 800px;
+            width: 100%;
+            background: #fff9fb; /* color sólido en lugar de blur */
+            padding: 2.5rem 2rem;
+            border-radius: 40px 40px 20px 20px;
+            box-shadow: 0 15px 30px rgba(120, 40, 60, 0.1);
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #a13d5f;
+            border-bottom: 2px dotted #e9b5c3;
+            padding-bottom: 0.8rem;
+        }
+
+        .fecha {
+            text-align: right;
+            font-style: italic;
+            color: #9b5e6e;
+            margin-bottom: 2rem;
+            font-size: 1.3rem;
+        }
+
+        /* CONTADOR - simplificado */
+        .contador-seccion {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.2rem;
+            background: #fcebf0;
+            border-radius: 50px;
+            border: 1px solid #f2ced9;
+        }
+        .contador-seccion p {
+            font-size: 1.4rem;
+            margin: 0.3rem 0;
+            color: #882d52;
+        }
+        #tiempoJuntos {
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: #a13d5f;
+            line-height: 1.3;
+        }
+
+        /* Secciones: eliminamos animaciones complejas que pueden trabar */
+        .seccion {
+            margin: 3rem 0;
+        }
+
+        .seccion p {
+            font-size: 1.5rem;
+            margin: 1.8rem 0;
+            text-align: left;
+        }
+
+        .separador {
+            text-align: center;
+            margin: 2.5rem 0;
+            color: #d993a9;
+            font-size: 2rem;
+            letter-spacing: 8px;
+        }
+
+        .corazon-sutil {
+            display: inline-block;
+            font-size: 2rem;
+            color: #c56784;
+        }
+
+        /* BOTÓN - más simple */
+        .pregunta-final {
+            background: #f2d9e0;
+            border-radius: 70px;
+            padding: 2rem 1.5rem;
+            margin: 4rem 0 2rem;
+            text-align: center;
+            border: 2px solid #f2ced9;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .pregunta-final:active {
+            background: #eac0cb;
+        }
+
+        .pregunta-final p {
+            font-size: 2rem;
+            margin: 0;
+            color: #882d52;
+        }
+
+        /* MENSAJE SECRETO - transición más simple */
+        #mensajeSecreto {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.8s ease-out;
+            margin: 0;
+            background: #fff0f5;
+            border-radius: 45px;
+            padding: 0 2rem;
+            border: 1px solid transparent;
+        }
+
+        #mensajeSecreto.mostrar {
+            max-height: 4000px;
+            margin: 3rem 0;
+            padding: 2rem;
+            border-color: #f1b6c4;
+        }
+
+        #mensajeSecreto p {
+            font-size: 1.5rem;
+            line-height: 1.9;
+            margin: 1.8rem 0;
+        }
+
+        .firma {
+            margin-top: 4rem;
+            text-align: right;
+            font-size: 2rem;
+            font-style: italic;
+            color: #a95270;
+            border-top: 1px dashed #d9a2b2;
+            padding-top: 1.5rem;
+        }
+
+        .posdata {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            color: #986b79;
+            text-align: center;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .carta { padding: 2rem 1.2rem; }
+            h1 { font-size: 2.5rem; }
+            .seccion p { font-size: 1.4rem; }
+            .pregunta-final p { font-size: 1.7rem; }
+            #mensajeSecreto p { font-size: 1.4rem; }
+            #tiempoJuntos { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="carta">
+        <h1>Elisa,</h1>
+        <div class="fecha">4 de marzo de 2026 · 3 meses</div>
+
+        <!-- CONTADOR DE 3 MESES -->
+        <div class="contador-seccion">
+            <p>Han pasado</p>
+            <div id="tiempoJuntos">0 días, 0 horas, 0 minutos, 0 segundos</div>
+            <p>desde que empezamos esta historia.</p>
+        </div>
+
+        <!-- SECCIÓN 1: INTRO -->
+        <div class="seccion">
+            <p>No hay música de fondo, no hay fotos, no hay nada que distraiga.<br>Solo estás tú leyendo, y yo queriéndote escribir algo que se quede contigo para siempre.</p>
+            <p>Porque tres meses no son solo números.<br>Son cada mañana en la que pienso en ti antes de abrir los ojos, cada noche en la que me duermo agradeciendo que existas.</p>
+            <p>Son 90 días en los que has cambiado mi forma de ver la vida, de sentir, de querer.</p>
+        </div>
+
+        <div class="separador">✧ ✧ ✧</div>
+
+        <!-- SECCIÓN 2: LO QUE SIENTO -->
+        <div class="seccion">
+            <p>A veces pienso en cómo era mi vida antes de ti. Y no es que estuviera vacía, pero tenía un color distinto, como si faltara un tono que ahora lo llena todo. Tú llegaste y, sin hacer ruido, te volviste parte de mí. De mis días, de mis sueños, de mis ganas de ser mejor persona.</p>
+            <p>Contigo he aprendido que el amor no es solo sentir mariposas, es también elegir cada día a la misma persona, incluso cuando no es fácil. Y yo te elijo a ti. Te elijo hoy, mañana, y todos los días que me quedan.</p>
+        </div>
+
+        <div class="separador">✧ ✧ ✧</div>
+
+        <!-- SECCIÓN 3: COSAS QUE NO TE HE DICHO -->
+        <div class="seccion">
+            <p>Hay cosas que tal vez no te digo todos los días, pero que llevo tatuadas en el alma:</p>
+            <p>— Me gusta cómo tus ojos brillan cuando hablas de lo que te apasiona. En ese momento eres pura luz.<br>— Me gusta tu forma de reírte, incluso de cosas simples. Esa risa me hace creer que la vida es más bonita.<br>— Me gusta que, incluso en silencio, a tu lado me siento en casa. Como si no necesitara nada más.<br>— Me gusta tu manera de preocuparte por los demás, tu ternura escondida detrás de esa fortaleza.<br>— Me gusta cuando te enfadas por cosas que importan, porque demuestra que tienes corazón y principios.<br>— Me gusta cómo besas, como si el tiempo se detuviera.<br>— Me gusta que existas.</p>
+            <p>Y lo más importante: me gusta la persona que soy cuando estoy contigo. Más paciente, más soñador, más vivo.</p>
+        </div>
+
+        <div class="separador">✧ ✧ ✧</div>
+
+        <!-- SECCIÓN 4: LO QUE HE APRENDIDO DE TI -->
+        <div class="seccion">
+            <p>De ti he aprendido que el amor no es un destino, es un camino que se construye cada día. He aprendido que la vulnerabilidad no es debilidad, sino la mayor muestra de confianza. He aprendido que dos personas pueden ser refugio la una de la otra sin dejar de ser libres.</p>
+            <p>Me has enseñado a mirar los detalles, a valorar los pequeños momentos, a entender que un "te quiero" dicho con honestidad vale más que mil promesas vacías.</p>
+        </div>
+
+        <div class="separador">✧ ✧ ✧</div>
+
+        <!-- SECCIÓN 5: EL TIEMPO Y LOS SUEÑOS -->
+        <div class="seccion">
+            <p>Han pasado 3 meses. Pero a veces siento que te conozco de siempre, y otras veces siento que aún me queda toda una vida por descubrirte. Porque eres un misterio hermoso, una combinación única de fuerza y dulzura, de locura y calma.</p>
+            <p>Tres meses han sido suficientes para saber que quiero seguir celebrando muchos más. Para saber que, pase lo que pase, quiero que sigas siendo tú, y quiero seguir siendo yo a tu lado. Para imaginar un futuro donde nuestros sueños se entrelazan, donde viajamos juntos, donde reímos, donde envejecemos.</p>
+            <p>No sé qué forma tendrá ese futuro, pero sí sé que quiero que estés en él. Quiero despertar a tu lado, quiero contarte mis miedos y que me cuentes los tuyos, quiero construir algo que ni el tiempo ni las dificultades puedan romper.</p>
+        </div>
+
+        <div class="separador">✧ ✧ ✧</div>
+
+        <!-- SECCIÓN 6: GRATITUD -->
+        <div class="seccion">
+            <p>Gracias por cada mensaje inesperado, por cada llamada que alegra mi día, por cada sonrisa que me regalas sin darte cuenta. Gracias por estar cuando las cosas no son fáciles, por quedarte a pesar de mis silencios y mis torpezas.</p>
+            <p>Gracias por ser mi lugar seguro, mi paz en medio del caos. Gracias por existir, por haber nacido en este mundo y haberte cruzado en mi camino.</p>
+        </div>
+
+        <div class="separador">✧ ✧ ✧</div>
+
+        <!-- SECCIÓN 7: PREVIO AL CLICK -->
+        <div class="seccion">
+            <p>Esto que te escribo no es un poema, no es una carta perfecta. Es solo mi corazón hablando sin filtros, sin miedo, sin adornos.</p>
+            <p>Porque a veces las palabras más simples son las más sinceras, las que más abrazan, las que se quedan para siempre.</p>
+            <p>Y ahora, si te atreves, quiero compartir contigo lo que nunca me atrevo a decirte en voz alta. Lo que guardo para las noches en las que solo pienso en ti.</p>
+        </div>
+
+        <!-- BOTÓN -->
+        <div class="pregunta-final" id="btnRevelar">
+            <p>¿Quieres leer lo que nunca me atrevo a decirte?<br><span class="corazon-sutil">❤️</span> toca aquí <span class="corazon-sutil">❤️</span></p>
+        </div>
+
+        <!-- MENSAJE SECRETO -->
+        <div id="mensajeSecreto">
+            <p>Elisa…</p>
+            <p>Si estás leyendo esto, es porque en este preciso instante estoy pensando en ti. Aunque no esté físicamente contigo, quiero que sepas que siempre hay una parte de mí que está a tu lado, sosteniéndote, queriéndote, cuidándote en silencio.</p>
+            <p>A veces me da miedo quererte tanto. Porque querer así significa que tu alegría también es la mía, y tu tristeza también me duele en lo más profundo. Pero no lo cambiaría por nada. Prefiero sentir todo contigo, incluso el dolor, que vivir a medias sin ti.</p>
+            <p>Hay noches en las que no puedo dormir y me pongo a pensar en todo lo que me gustaría vivir a tu lado. Viajes, risas, llantos, madrugadas hablando sin parar, silencios cómodos, peleas tontas y reconciliaciones sinceras. Quiero todo eso. Lo quiero contigo.</p>
+            <p>No sé si el amor eterno existe. Pero sí sé que el amor verdadero se demuestra día a día, y yo quiero demostrártelo siempre. Con pequeños gestos, con paciencia, con presencia. Quiero ser tu apoyo cuando el mundo pese, tu abrigo cuando haga frío, tu motivo para sonreír cuando todo parezca gris.</p>
+            <p>Me da miedo no ser suficiente para ti. A veces siento que no sé expresar todo lo que llevo dentro, que las palabras se quedan cortas. Pero luego recuerdo que tú no me pides perfección, me pides honestidad. Y eso es lo que te doy: mi verdad, sin máscaras.</p>
+            <p>Te he visto en tus mejores días y también en los que no tanto. Y en todos ellos me has parecido hermosa. Porque tu hermosura no está solo en tu cara, está en tu forma de ser, en tu manera de querer, en tu mirada cuando te preocupas por alguien.</p>
+            <p>Quiero que sepas que no estás sola. Nunca. Pase lo que pase, pase el tiempo que pase, yo voy a estar aquí. Como amigo, como compañero, como la persona que te ama y te elige cada día. Puedes contar conmigo para lo bueno y para lo malo, para celebrar y para llorar, para soñar y para levantarnos cuando caigamos.</p>
+            <p><strong>Y quiero que seas feliz. Pero quiero que esa felicidad sea a mi lado, construyendo juntos, creciendo juntos, amándonos sin miedo. No me imagino un futuro en el que tú no estés, porque tú eres mi presente y futuro, eres mi todo.</strong></p>
+            <p>Mientras tú quieras, mientras tú me dejes, yo voy a estar. Luchando por nosotros, cuidando este amor que es lo más bonito que me ha pasado.</p>
+            <p>Gracias por estos tres meses. Gracias por cada sonrisa, cada lágrima compartida, cada conversación tan hermosa contigo. Gracias por ser quien eres: única, valiosa, increíble.</p>
+            <p>Te amo con todo lo que soy, con todo lo que tengo, con todo lo que quiero ser. Y no hay nada en este mundo que desee más que seguir amándote cada día de mi vida.</p>
+            <p style="margin-top: 2rem; text-align: right;">Con todo mi ser,<br><strong>Hollman</strong></p>
+            <p style="margin-top: 1.5rem; font-style: italic; text-align: center;">Para siempre tuyo, siempre contigo.</p>
+        </div>
+
+        <div class="firma"><span class="corazon-sutil">❤️</span> Siempre tuyo</div>
+        <div class="posdata">Esto es solo para ti. Para que lo leas cuando necesites sentir amor, cuando dudes, cuando quieras recordar que hay alguien en este mundo para quien tú lo eres todo.</div>
+    </div>
+
+    <script>
+        (function() {
+            // CONTADOR OPTIMIZADO - menos operaciones
+            const fechaInicio = new Date(2025, 11, 4);
+            const contadorElemento = document.getElementById('tiempoJuntos');
+
+            function actualizarContador() {
+                const ahora = new Date();
+                const diffMs = ahora - fechaInicio;
+                if (diffMs < 0) {
+                    contadorElemento.textContent = "Todavía no ha empezado...";
+                    return;
+                }
+                const segundos = Math.floor(diffMs / 1000);
+                const dias = Math.floor(segundos / 86400);
+                const horas = Math.floor((segundos % 86400) / 3600);
+                const minutos = Math.floor((segundos % 3600) / 60);
+                const segs = segundos % 60;
+                contadorElemento.innerHTML = `${dias} días, ${horas} horas, ${minutos} minutos, ${segs} segundos`;
+            }
+            actualizarContador();
+            setInterval(actualizarContador, 1000);
+
+            // BOTÓN REVELAR - simplificado
+            const btn = document.getElementById('btnRevelar');
+            const mensaje = document.getElementById('mensajeSecreto');
+            if (btn && mensaje) {
+                btn.addEventListener('click', function() {
+                    mensaje.classList.toggle('mostrar');
+                    // Pequeño scroll para que se vea el mensaje
+                    if (mensaje.classList.contains('mostrar')) {
+                        setTimeout(() => mensaje.scrollIntoView({ behavior: 'smooth', block: 'center' }), 200);
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
