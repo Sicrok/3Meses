@@ -301,11 +301,12 @@
                     mensaje.classList.toggle('mostrar');
                     // Pequeño scroll para que se vea el mensaje
                     if (mensaje.classList.contains('mostrar')) {
-                        setTimeout(() => mensaje.scrollIntoView({ behavior: 'smooth', block: 'center' }), 200);
+                        setTimeout(() => mensaje.scrollIntoView({ behavior: 'smooth', block: 'center' }), 50);
                     }
                 });
             }
         })();
     </script>
 </body>
+
 </html>
